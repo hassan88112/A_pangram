@@ -1,11 +1,39 @@
 
 package a_pangram;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 import jdk.nashorn.internal.objects.NativeString;
 
 public class A_Pangram {
-    
+
+     public static void main(String[] args) {
+        
+       Scanner input = new Scanner(System.in);
+       int size=input.nextInt();
+       String s=input.next();
+       Map<Character,Integer> m=new HashMap();  
+       if (s.length() < 26){
+           System.out.println("NO");
+           System.exit(0);
+       }else{
+       s=s.toLowerCase();
+       for(int i=0;i<s.length();i++){
+       m.put(s.charAt(i), 0);
+       }
+       if(m.size() == 26){
+           System.out.println("YES");
+       }else{
+           System.out.println("NO");
+       }
+       }
+       
+       
+       
+    }   
+}
+/*
         public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -37,24 +65,8 @@ public class A_Pangram {
 
     }
 }
-
+*/
 
    /*
-    public static void main(String[] args) {
-        
-       Scanner input = new Scanner(System.in);
-       int size=input.nextInt();
-       if (size < 26){
-           System.out.println("NO");
-           System.exit(0);
-       }
-       String word=input.next();
-       for(int i=0 ;i<size ;i++) {
-        word[i]=Character.toLowerCase(word[i]);
-       }
-       
-       
-    }
-    
-}
+   
 */
